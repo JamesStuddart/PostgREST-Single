@@ -1,0 +1,13 @@
+stgrest:
+  image: cd-postgrest
+  ports:
+    - "3001:3000"
+    - "5433:5432"
+  environment:
+    PGRST_DB_URI: postgresql://app_user:password@0.0.0.0:5432/postgres
+    PGRST_DB_SCHEMA: public
+    PGRST_DB_ANON_ROLE: app_user
+    POSTGRES_DB: app_db
+    POSTGRES_USER: app_user
+    POSTGRES_PASSWORD: password
+    PGDATA: /var/lib/postgresql/data/pgdata
